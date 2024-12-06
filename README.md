@@ -6,6 +6,4 @@ The objective is to build a simple platform to upload and view files:
 * Upload a new file
 * Change permission of a file
 * View a file
-* Generate thumbnails for images.<br/>
-The system gives step by step guidance for building it, gave some freedoms of implementation, split in more files etc… (utils folder is your friend).<br/>
-It’s a learning purpose to assemble each piece and build a full product.
+* Generate thumbnails for images.<br/>The system gives step by step guidance for building it, gave some freedoms of implementation, split in more files etc… (utils folder is your friend).<br/>It’s a learning purpose to assemble each piece and build a full product.
