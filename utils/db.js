@@ -1,10 +1,12 @@
 #!/usr/bin/yarn dev
+
 import { MongoClient } from 'mongodb';
 
 const HOST = process.env.DB_HOST || 'localhost';
 const PORT = process.env.DB_PORT || 27017;
 const DATABASE = process.env.DB_DATABASE || 'files_manager';
 const url = `mongodb://${HOST}:${PORT}`;
+
 /**
  * Class that defines methods to interact with the mongodb service
  */
@@ -19,7 +21,7 @@ class DBClient {
       .connect()
       .then(() => {
         // Connection to MongnDB server successful
-        this.db = this.client.db(DATABASE);
+        this.db = this.client.db(`${DATABASE}`);
         console.log(`MongoDB Connection to server at ${url}`);
       })
       .catch((error) => {
@@ -33,7 +35,7 @@ class DBClient {
    * @return {boolean} Returns true if connected, else false.
    */
   isAlive() {
-    return this.connected;
+    return Boolean(this.client.db);
   }
 
   /**
